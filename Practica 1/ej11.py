@@ -1,31 +1,31 @@
 def main():
-    #Variable dónde se almacenará la sucesión de números, ingresada manualmente por el usuario.
-    sucesion = ""
-    #Variable dónde el usuario ingresa un término de la sucesión.
-    numero = '0'
+    print("Ingrese los números de la sucesión. Presione Enter sin ingresar un valor para terminar:")
 
-    print("Ingrese los números que quiera. Presione enter sin ingresar un valor para terminar.")
-    #Carga de datos la sucesión. No se sabe cuantos términos tiene, as que el usuario carga la cantidad que quiera.
-    while numero != '':
-        numero = input(">> ")
-        #Dependiendo si es el comienzo/final de la sucesión o no, se le agrega una coma entre términos.
-        if sucesion == "" or numero == '':
-            sucesion = sucesion + numero
-        else:
-            sucesion = sucesion + ',' + numero
+    #Lee los dos primeros números.
+    primero = input(">> ")
+    if primero == "":
+        return
+    primero = int(primero)
 
-    print("Sucesión ingresada:", sucesion)
+    segundo = input(">> ")
+    if segundo == "":
+        return
+    segundo = int(segundo)
 
-    #Variable para tomar de a términos individuales de la sucesión.
-    termino = ""
-    i = 0
-    while sucesion[i] != '':
-        #Toma de a términos, teniendo en cuenta la separación por coma de la sucesión.
-        while sucesion[i] != ',':
-            termino = termino + sucesion[i]
-            i += 1
+    #Lee el resto de la sucesión hasta que ingresa un enter.
+    siguiente = input(">> ")
+    while siguiente != "":
+        siguiente = int(siguiente)
 
-    print(termino)
+        #Verifica si el valor del medio es un máximo relativo.
+        if segundo > primero and segundo > siguiente:
+            print("Máximo relativo:", segundo)
+
+        #Desplaza los valores, tomando la posición siguiente respectiva a cada número.
+        primero = segundo
+        segundo = siguiente
+
+        siguiente = input(">> ")
 
 if __name__ == "__main__":
     main()
