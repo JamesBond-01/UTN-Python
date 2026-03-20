@@ -29,9 +29,13 @@ def main():
             j += 1
 
     #Muestra los resultados de los cálculos.
-    print(f"El monto máximo de todas las sucursales, con monto menor a $300000, es de ${sucursal_facturacion[maximo]}")
+    if maximo == -1:
+        print("No hay sucursales con facturación menor a $300000.")
+    else:
+        print(f"El monto máximo de todas las sucursales, con monto menor a $300000, es de ${sucursal_facturacion[maximo]}")
+
     print("Las siguientes sucursales fueron las que recaudaron al menos $300000:")
-    for i in range(j + 1):
+    for i in range(j):
         print(sucursales_tope[i])
 
 if __name__ == "__main__":
