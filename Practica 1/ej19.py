@@ -13,6 +13,8 @@ def calcula_promedio(conjunto):
     for i in range(len(conjunto)):
         suma_total += conjunto[i]
         cant += 1
+    if cant == 0:
+        return 0
     return suma_total/cant
 
 def main():
