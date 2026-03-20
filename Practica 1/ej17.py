@@ -35,7 +35,10 @@ def main():
         else:
             cant_nulos += 1
     #Calcula el promedio de los valores positivos.
-    promedio_positivos = suma_positivos / cant_positivos
+    if cant_positivos == 0:
+        promedio_positivos = 0
+    else:
+        promedio_positivos = suma_positivos / cant_positivos
 
     #Muestra los resultados obtenidos.
     print(f"Promedio de los números positivos: {promedio_positivos}")
