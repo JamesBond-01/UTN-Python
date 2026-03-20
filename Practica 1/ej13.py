@@ -10,7 +10,8 @@ def calcular_sueldo(tarifa, horas):
     if horas <= HORAS_NORMALES:
         sueldo = tarifa * horas
     else:
-        sueldo = tarifa * horas * 1.5
+        horas_extra = horas - HORAS_NORMALES
+        sueldo = (tarifa * HORAS_NORMALES) + (horas_extra * tarifa * 1.5)
     return sueldo
 
 def calcular_impuesto(sueldo):
